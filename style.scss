@@ -31,40 +31,58 @@ body {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .grey-text {
   color: #aaa;
 }
 
 .small-text {
-  font-size: 0.9em;
+  font-size: 0.95em;
+  letter-spacing: 0.3px;
+
+}
+
+.no-m {
+  margin: 0;
+}
+
+.no-m-b {
+  margin-bottom: 0;
 }
 
 a, a:visited {
-  color: #333;
+  color: $blue;
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
   transition: all 0s ease;
+  border-bottom: 1px solid #eee;
 }
 
 a:hover, a:active {
-  color: $blue;
+  color: $dark-blue;
 }
 
 a.button {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
   color: $blue;
   padding: 13.5px 30px;
   text-align: center;
   border: 1.5px solid $blue;
   border-radius: 6px;
   cursor: pointer;
-  margin: 20px 10px;
-  letter-spacing: -0.5px;
-}
-
-a.button.cta {
-  background: $blue;
-  color: #fff;
+  margin: 20px 0;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  &.ghost {
+    margin-right: 10px;
+  }
+  &.cta {
+    margin-left: 10px;
+    background: $blue;
+    color: #fff;
+  }
 }
 
 a.button:hover {
@@ -83,36 +101,36 @@ a.button.cta:hover {
 }
 
 .mono {
-  font-family: 'Roboto Mono' ,'droid-sans-mono', monospace;
-  letter-spacing: -0.3px;
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
+  font-weight: 600;
 }
 
 section {
   padding: 8vh 0;
   display: block;
-  box-shadow: 0 1px 1px -1px rgba(0,0,0,0.3);
+  border-bottom: 1px solid #eee;
   &.grey {
     background: #FAFAFA;
   }
   h2.title {
     font-size: 2.8em;
     margin: 0 0 35px 0;
-    font-family: 'Roboto Mono' ,'droid-sans-mono', monospace;
+    font-family: 'inconsolata' ,'droid-sans-mono', monospace;
     letter-spacing: -0.5px;
-    font-weight: 800;
+    font-weight: 400;
   }
   p {
     font-size: 1.2em;
   }
 }
 
-header {
-  font-family: 'Roboto Mono' ,'droid-sans-mono', monospace;
+header, footer {
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 0.95em;
   height: 70px;
   min-width: 100%;
-  padding-top: 2vh;
+  padding: 3vh 0;
   box-shadow: none;
   nav {
     .wrapper {
@@ -132,8 +150,19 @@ header {
         line-height: 70px;
         text-align: center;
         letter-spacing: 2px;
+        a {
+          border: none;
+        }
       }
     }
+  }
+}
+
+footer {
+  text-transform: none;
+  font-size: 1.1em;
+  a {
+    border: none;
   }
 }
 
@@ -148,7 +177,7 @@ header {
   h2.subhead {
     margin: 0 auto 75px auto;
     color: $dark-grey;
-    font-weight: 100;
+    // font-weight: 100;
   }
   img.logo {
     height: 160px;
@@ -172,5 +201,23 @@ header {
   img {
     max-width: 40%;
     margin: 50px 50px 0px 0px;
+  }
+}
+
+#bottom {
+  h3.bottom-title {
+    font-family: 'basis-mono', 'inconsolata' ,'droid-sans-mono', monospace;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1em;
+  }
+  ul.links {
+    padding: 0;
+    font-size: 1.2em;
+    li {
+      list-style: none;
+      padding: 2.5px 0;
+    }
   }
 }
