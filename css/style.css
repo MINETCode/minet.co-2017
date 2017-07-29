@@ -359,6 +359,17 @@ img::selection {
 .table-cell {
   display: table-cell; }
 
+code {
+  background: #F5F5F5;
+  font-size: 2em;
+  border-radius: 3px;
+  letter-spacing: 10px;
+  text-align: center;
+  padding: 12.5px 20px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  display: inline-block; }
+
 /***************
  * General Styling *
  ***************/
