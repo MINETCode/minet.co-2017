@@ -518,14 +518,17 @@ footer {
   font-size: 0.95em;
   margin: 0 0 25px 0; }
 .event .card {
-  margin-top: 50px; }
+  margin-top: 50px;
+  padding: 5%; }
   .event .card.mono {
     font-size: 0.85em; }
-  .event .card ul li {
-    list-style: circle;
-    margin-bottom: 2.5px; }
-  .event .card ul li:last-child {
+  .event .card ul {
     margin-bottom: 0; }
+    .event .card ul li {
+      list-style: circle;
+      margin-bottom: 2.5px; }
+    .event .card ul li:last-child {
+      margin-bottom: 0; }
   .event .card p {
     margin: 0; }
 

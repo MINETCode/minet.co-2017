@@ -341,10 +341,12 @@ footer {
    }
    .card {
      margin-top: 50px;
+     padding: 5%;
      &.mono {
        font-size: 0.85em;
      }
      ul {
+       margin-bottom: 0;
        li {
          list-style: circle;
          margin-bottom: 2.5px;
