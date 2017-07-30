@@ -303,7 +303,7 @@ img::selection {
   text-align: right; }
 
 .grey-text {
-  color: #aaa; }
+  color: #AAAAAA; }
 
 .small-text {
   font-size: 0.95em;
@@ -537,3 +537,94 @@ footer {
   font-size: 0.9em; }
 #travel iframe {
   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.05); }
+
+/***************
+ * Schedule Styling *
+ ***************/
+#schedule {
+  text-align: center; }
+  #schedule h4 {
+    margin-bottom: 0; }
+  #schedule .toggle-btn {
+    margin-bottom: 40px;
+    background: #fff;
+    border: 1px solid #EEE;
+    padding: 5px 25px;
+    outline: none; }
+    #schedule .toggle-btn.selected {
+      background: #6699EE;
+      color: #FFF; }
+    #schedule .toggle-btn#day-one {
+      border-right: none;
+      border-radius: 5px 0 0 5px; }
+    #schedule .toggle-btn#day-two {
+      border-left: none;
+      border-radius: 0 5px 5px 0; }
+  #schedule table {
+    margin: 0 auto;
+    background: #FFF;
+    display: none;
+    font-weight: 100;
+    font-size: 1.1em; }
+    #schedule table.selected {
+      display: table; }
+    #schedule table td, #schedule table th {
+      text-align: center;
+      padding: 12.5px 27.5px;
+      border: 1px solid #EEE; }
+      #schedule table td.axis, #schedule table th.axis {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9em;
+        font-weight: 600; }
+      #schedule table td.mod, #schedule table th.mod {
+        padding: 7.5px 17.5px;
+        text-transform: initial;
+        font-weight: 400; }
+      #schedule table td span.vis-hidden, #schedule table th span.vis-hidden {
+        visibility: hidden; }
+
+/***************
+ * FAQs Styling *
+ ***************/
+#faqs .questions {
+  background: #FFF;
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
+  width: 800px;
+  margin: 0 auto;
+  max-width: 100%; }
+  #faqs .questions dl {
+    padding: 0;
+    font-size: 1.1em; }
+    #faqs .questions dl dt, #faqs .questions dl dd {
+      margin: 0;
+      padding: 2.5% 5% 2.5% 2.5%;
+      list-style: none;
+      position: relative; }
+    #faqs .questions dl dt {
+      cursor: pointer;
+      font-weight: 800;
+      position: relative;
+      background: #f0f0f0;
+      box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02); }
+      #faqs .questions dl dt:after {
+        content: '+';
+        font-size: 1.8em;
+        font-weight: 100;
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px; }
+      #faqs .questions dl dt.active {
+        border-bottom: none; }
+        #faqs .questions dl dt.active:after {
+          content: '-'; }
+      #faqs .questions dl dt:hover {
+        background: #eaeaea; }
+    #faqs .questions dl dd {
+      font-weight: 100;
+      display: none; }
+      #faqs .questions dl dd.active {
+        display: block;
+        border-bottom: 1px solid #EEE; }
