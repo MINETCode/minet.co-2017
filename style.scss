@@ -198,7 +198,7 @@ section {
   display: block;
   border-bottom: 1px solid #eee;
   &.grey {
-    background: $grey;
+    background: #FAFAFA;
   }
   h2.title {
     font-size: 2.8em;
@@ -220,6 +220,9 @@ header, footer {
   padding: 3vh 0;
   box-shadow: none;
   nav {
+    &.mobile {
+      display: none;
+    }
     .wrapper {
       align-items: center;
       display: flex;
@@ -549,4 +552,137 @@ form {
       margin: 0 auto;
       max-width: 100%;
     }
+  }
+
+  /***************
+   * Responsive Styling *
+   ***************/
+
+  @media (max-width: 1000px) {
+
+    header {
+      nav {
+        display: none;
+        padding-bottom: 10px;
+        &.mobile {
+          display: block;
+          .wrapper.logo {
+            height: 0px;
+            padding: 25px 0 15px 0;
+            ul {
+              margin: 0;
+
+              li {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      text-align: center;
+      .right {
+        display: none;
+      }
+    }
+
+    #bottom {
+      display: none;
+    }
+
+    a.button {
+      display: block;
+      &.cta, &.ghost {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    #masthead {
+      padding-top: 20px;
+      img.logo {
+        height: 140px;
+      }
+      h1.hero-text {
+        font-size: 3em;
+        .br {
+          display: block;
+        }
+      }
+      h2.subhead {
+        margin-bottom: 50px;
+      }
+    }
+
+    #x {
+      img {
+        margin: 0 auto;
+        padding-bottom: 30px;
+      }
+    }
+
+    #travel {
+      padding-bottom: 0;
+      .container {
+        padding: 0;
+        .card {
+          background: #FAFAFA;
+          padding: 0 5%;
+        }
+        iframe {
+          max-width: 100%;
+          margin-bottom: 0;
+          height: 400px;
+        }
+      }
+    }
+
+    #faqs {
+      .questions {
+        dl {
+          dt, dd {
+            padding: 5%;
+          }
+          dt {
+            padding-right: 12.5%;
+          }
+        }
+      }
+    }
+
+    .row {
+      .six.columns:nth-child(2) {
+        h2.title {
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .event {
+      .placeholder {
+        display: none;
+      }
+      p.participant-count {
+        margin-top: 15px;
+      }
+    }
+
+    .card.form {
+      padding: 5%;
+    }
+
+  }
+
+  @media (max-width: 840px) {
+
+  }
+
+  @media (max-width: 810px) {
+
+  }
+
+  @media (max-width: 750px) {
+
   }
