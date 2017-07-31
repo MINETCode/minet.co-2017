@@ -365,7 +365,7 @@ code {
   border-radius: 3px;
   letter-spacing: 10px;
   text-align: center;
-  padding: 12.5px 20px;
+  padding: 12.5px 12.5px 12.5px 20px;
   margin: 0 auto;
   border: 1px solid #eee;
   display: inline-block; }
@@ -475,11 +475,48 @@ footer {
     list-style: none;
     padding: 2.5px 0; }
 
+h3.form-title {
+  text-align: center;
+  margin-top: 0;
+  font-size: 3em; }
+
+form input, form select, form textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #eee;
+  height: 38px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background: #fff;
+  -webkit-appearance: none;
+  letter-spacing: 0.3px; }
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #216BE6;
+  outline: none; }
+form input[type='submit'] {
+  background: #6699EE;
+  border-color: #6699EE;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 20px; }
+  form input[type='submit']:hover {
+    background: #216BE6;
+    border-color: #216BE6;
+    color: #FFF; }
+
 /***************
  * Intro Styling *
  ***************/
 #intro h2.title {
   font-weight: 800; }
+#intro p:last-child {
+  margin-bottom: 0; }
 
 /***************
  * Home Styling *
@@ -631,3 +668,13 @@ footer {
       #faqs .questions dl dd.active {
         display: block;
         border-bottom: 1px solid #EEE; }
+
+/***************
+ * Request Styling *
+ ***************/
+#request .card.form {
+  background: #FFF;
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100%; }
