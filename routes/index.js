@@ -42,7 +42,7 @@ router.post('/request', (req, res, next) => {
       pass: '1JagdishKumar01*' // Your password
     }
   });
-  var text = req.body.insName + ' has requested an invite for MINET X 2017. \n\n Name of institution:' + req.body.insName + '\n Contact email: ' + req.body.email + '\n Point of contact: ' + req.body.pName + '\n Website/Relevant links: ' + req.body.links;
+  var text = req.body.insName + ' has requested an invite for MINET X 2017. \n\n Name of institution: ' + req.body.insName + '\n Contact email: ' + req.body.email + '\n Point of contact: ' + req.body.pName + '\n Website/Relevant links: ' + req.body.links;
   var mailOptions = {
     from: 'minet@themis.in', // sender address
     to: 'minet+requests@themis.in', // list of receivers
@@ -64,6 +64,12 @@ router.post('/request', (req, res, next) => {
 router.get('/rsvp', (req, res, next) => {
   return res.render('rsvp');
 });
+
+//Render rsvp page
+router.get('/success', (req, res, next) => {
+  return res.render('success');
+});
+
 
 
 module.exports = router;
