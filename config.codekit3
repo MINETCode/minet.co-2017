@@ -94,6 +94,12 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/Procfile": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Procfile",
+		"oF": 0
+		},
 	"\/public": {
 		"ft": 65536,
 		"oA": 1,
