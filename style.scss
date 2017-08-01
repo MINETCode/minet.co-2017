@@ -432,6 +432,9 @@ form {
  ***************/
 
  #schedule {
+   .mobile {
+     display: none;
+   }
  		text-align: center;
  		h4 {
  			margin-bottom: 0;
@@ -685,6 +688,15 @@ form {
         h2.title {
           margin-top: 40px;
         }
+      }
+    }
+
+    #schedule {
+      .main {
+        display: none;
+      }
+      .mobile {
+        display: block;
       }
     }
 

@@ -12,7 +12,7 @@ block content
   section#schedule.grey.mono
     .container
       .row
-        .twelve.columns
+        .twelve.columns.main
           button#day-one.toggle-btn.selected Day 1
           button#day-two.toggle-btn Day 2
           table#day-one.selected
@@ -99,6 +99,9 @@ block content
               td.axis 1:30 PM
             tr
               td.axis 2:00 PM
+        .twelve.columns.mobile
+          h1
+            a(href="/downloads/schedule.pdf") Download PDF
   section
     .container
       .row

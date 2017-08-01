@@ -589,6 +589,8 @@ form input[type='submit'] {
  ***************/
 #schedule {
   text-align: center; }
+  #schedule .mobile {
+    display: none; }
   #schedule h4 {
     margin-bottom: 0; }
   #schedule .toggle-btn {
@@ -760,6 +762,10 @@ img.messenger-code {
     max-width: 130px; }
   .row .six.columns:nth-child(2) h2.title {
     margin-top: 40px; }
+  #schedule .main {
+    display: none; }
+  #schedule .mobile {
+    display: block; }
   .event .placeholder {
     display: none; }
   .event p.participant-count {
