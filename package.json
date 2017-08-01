@@ -1,0 +1,24 @@
+{
+  "name": "minet.co-2017",
+  "version": "1.0.0",
+  "description": "Official website for MINET X 2017",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MINETCode/minet.co-2017.git"
+  },
+  "author": "MINET",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MINETCode/minet.co-2017/issues"
+  },
+  "homepage": "https://github.com/MINETCode/minet.co-2017#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.2"
+  }
+}

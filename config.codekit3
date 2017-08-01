@@ -15,128 +15,90 @@
 		"oAP": "\/.sass-cache\/cb6dea77e0e0fa3e4c8d0452a897b1e08cd6756f\/style.scssc",
 		"oF": 0
 		},
-	"\/css\/framework.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/framework-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/css\/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/events.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/events.html",
-		"oF": 0
-		},
-	"\/faqs.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/faqs.html",
-		"oF": 0
-		},
-	"\/fonts\/minet.eot": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/minet.eot",
-		"oF": 0
-		},
-	"\/fonts\/minet.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/fonts\/minet.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/fonts\/minet.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/minet.ttf",
-		"oF": 0
-		},
-	"\/fonts\/minet.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/minet.woff",
-		"oF": 0
-		},
-	"\/fonts\/minet.woff2": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/fonts\/minet.woff2",
-		"oF": 0
-		},
-	"\/img\/icon.png": {
-		"ft": 32768,
-		"iS": 7125,
-		"oA": 0,
-		"oAP": "\/img\/icon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/img\/make.png": {
-		"ft": 32768,
-		"iS": 26947,
-		"oA": 0,
-		"oAP": "\/img\/make.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/img\/x.png": {
-		"ft": 32768,
-		"iS": 15869,
-		"oA": 0,
-		"oAP": "\/img\/x.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/index.html": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/index.html",
-		"oF": 0
-		},
-	"\/js\/min\/script-min.js": {
+	"\/app.js": {
 		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/min\/min\/script-min-min.js",
-		"oF": 0,
-		"sC": 1,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/min\/app-min.js",
+		"oF": 1,
+		"sC": 0,
 		"tS": 0
 		},
-	"\/js\/script.js": {
-		"ft": 64,
-		"mi": 1,
+	"\/html\/events.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/events.html",
+		"oF": 0
+		},
+	"\/html\/faqs.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/faqs.html",
+		"oF": 0
+		},
+	"\/html\/index.html": {
+		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/js\/min\/script-min.js",
+		"oAP": "\/html\/index.html",
+		"oF": 0
+		},
+	"\/html\/request.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/request.html",
+		"oF": 0
+		},
+	"\/html\/rsvp.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/rsvp.html",
+		"oF": 0
+		},
+	"\/html\/schedule.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/schedule.html",
+		"oF": 0
+		},
+	"\/html\/travel.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/html\/travel.html",
+		"oF": 0
+		},
+	"\/models": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/models",
+		"oF": 0
+		},
+	"\/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "\/build\/node_modules",
+		"oF": 0
+		},
+	"\/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/package-lock-min.json",
 		"oF": 0,
-		"sC": 1,
-		"tS": 0
+		"oO": 0,
+		"oS": 1
+		},
+	"\/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/public": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/public",
+		"oF": 0
 		},
 	"\/README.md": {
 		"cS": 0,
@@ -156,22 +118,10 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/request.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/request.html",
-		"oF": 0
-		},
-	"\/rsvp.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/rsvp.html",
-		"oF": 0
-		},
-	"\/schedule.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/schedule.html",
+	"\/routes": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/routes",
 		"oF": 0
 		},
 	"\/style.scss": {
@@ -182,15 +132,15 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/style.css",
-		"oF": 0,
+		"oAP": "\/public\/css\/style.css",
+		"oF": 2,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/travel.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/travel.html",
+	"\/views": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/views",
 		"oF": 0
 		}
 	},
@@ -2140,7 +2090,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, \/views, \/public, \/routes, \/models",
 	"sourceFolderName": "source",
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {

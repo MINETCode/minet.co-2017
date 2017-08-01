@@ -252,6 +252,9 @@ header, footer {
 footer {
   text-transform: none;
   font-size: 1.1em;
+  p {
+    margin: -5px 0 0 0;
+  }
   a {
     border: none;
     font-weight: 400;
@@ -540,6 +543,11 @@ form {
     }
   }
 
+  img.messenger-code {
+    max-width: 180px;
+    margin-top: -30px;
+  }
+
   /***************
    * Request Styling *
    ***************/
@@ -563,7 +571,7 @@ form {
     header {
       nav {
         display: none;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
         &.mobile {
           display: block;
           .wrapper.logo {
@@ -607,12 +615,13 @@ form {
       }
       h1.hero-text {
         font-size: 3em;
+        margin-top: 25px;
         .br {
           display: block;
         }
       }
       h2.subhead {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
       }
     }
 
