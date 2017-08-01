@@ -295,6 +295,7 @@ form {
     box-shadow: none;
     box-sizing: border-box;
     margin-bottom: 20px;
+    margin-top: 5px;
     background: #fff;
     -webkit-appearance: none;
     letter-spacing: 0.3px;
@@ -417,6 +418,9 @@ form {
   .mono {
     font-weight: 100;
     font-size: 0.9em;
+  }
+  .card {
+    height: 530px;
   }
   iframe {
     box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.05);
@@ -589,8 +593,15 @@ form {
 
     footer {
       text-align: center;
-      .right {
-        display: none;
+      .columns.six {
+        display: block;
+        width: 100%;
+        &.right {
+          display: none;
+        }
+        p {
+          margin: 10px 0 0 0;
+        }
       }
     }
 
@@ -633,10 +644,15 @@ form {
     #travel {
       padding-bottom: 0;
       .container {
+        .columns {
+          display: block;
+          width: 100%;
+        }
         padding: 0;
         .card {
           background: #FAFAFA;
           padding: 0 5%;
+          height: auto;
         }
         iframe {
           max-width: 100%;
@@ -657,6 +673,11 @@ form {
           }
         }
       }
+    }
+
+    img.messenger-code {
+      margin-top: 20px;
+      max-width: 130px;
     }
 
     .row {
@@ -682,14 +703,22 @@ form {
 
   }
 
-  @media (max-width: 840px) {
-
-  }
-
-  @media (max-width: 810px) {
-
-  }
 
   @media (max-width: 750px) {
+    #x, #make {
+      img {
+        padding-top: 100px;
+        max-width: 130px;
+      }
+    }
+  }
 
+  @media (max-width: 500px) {
+    #x, #make {
+      img {
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+    }
   }

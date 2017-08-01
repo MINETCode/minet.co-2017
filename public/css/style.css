@@ -487,6 +487,7 @@ form input, form select, form textarea {
   box-shadow: none;
   box-sizing: border-box;
   margin-bottom: 20px;
+  margin-top: 5px;
   background: #fff;
   -webkit-appearance: none;
   letter-spacing: 0.3px; }
@@ -576,6 +577,9 @@ form input[type='submit'] {
 #travel .mono {
   font-weight: 100;
   font-size: 0.9em; }
+
+#travel .card {
+  height: 530px; }
 
 #travel iframe {
   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.05); }
@@ -704,8 +708,13 @@ img.messenger-code {
             width: 100%; }
   footer {
     text-align: center; }
-    footer .right {
-      display: none; }
+    footer .columns.six {
+      display: block;
+      width: 100%; }
+      footer .columns.six.right {
+        display: none; }
+      footer .columns.six p {
+        margin: 10px 0 0 0; }
   #bottom {
     display: none; }
   a.button {
@@ -731,9 +740,13 @@ img.messenger-code {
     padding-bottom: 0; }
     #travel .container {
       padding: 0; }
+      #travel .container .columns {
+        display: block;
+        width: 100%; }
       #travel .container .card {
         background: #FAFAFA;
-        padding: 0 5%; }
+        padding: 0 5%;
+        height: auto; }
       #travel .container iframe {
         max-width: 100%;
         margin-bottom: 0;
@@ -742,6 +755,9 @@ img.messenger-code {
     padding: 5%; }
   #faqs .questions dl dt {
     padding-right: 12.5%; }
+  img.messenger-code {
+    margin-top: 20px;
+    max-width: 130px; }
   .row .six.columns:nth-child(2) h2.title {
     margin-top: 40px; }
   .event .placeholder {
@@ -750,3 +766,14 @@ img.messenger-code {
     margin-top: 15px; }
   .card.form {
     padding: 5%; } }
+
+@media (max-width: 750px) {
+  #x img, #make img {
+    padding-top: 100px;
+    max-width: 130px; } }
+
+@media (max-width: 500px) {
+  #x img, #make img {
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px; } }
