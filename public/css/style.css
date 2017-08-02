@@ -425,7 +425,7 @@ header, footer {
     width: 100vw;
     height: 100vh;
     text-align: center;
-    padding-top: 15vh;
+    padding-top: 10vh;
     padding-left: 0;
     font-weight: 100;
     letter-spacing: 2px;
@@ -436,7 +436,8 @@ header, footer {
       display: block; }
     header ul#mobile-menu li, footer ul#mobile-menu li {
       list-style: none;
-      padding: 20px 0 20px 15px; }
+      width: 100%;
+      padding: 15px 0; }
     header ul#mobile-menu i.ion-ios-close-empty, footer ul#mobile-menu i.ion-ios-close-empty {
       font-size: 2em;
       margin: 0;
@@ -791,20 +792,18 @@ img.messenger-code {
     padding-bottom: 30px; }
   #travel {
     padding-bottom: 0; }
-    #travel .container {
-      padding: 0; }
-      #travel .container .columns {
-        display: block;
-        width: 100%; }
-      #travel .container .card {
-        background: #FAFAFA;
-        padding: 0;
-        height: auto; }
-      #travel .container iframe {
-        width: 100%;
-        margin: 0 0 8vh 0;
-        padding: 0;
-        height: 400px; }
+    #travel .container .columns {
+      display: block;
+      width: 100%; }
+    #travel .container .card {
+      background: #FAFAFA;
+      padding: 0;
+      height: auto; }
+    #travel .container iframe {
+      width: 100%;
+      margin: 0 0 8vh 0;
+      padding: 0;
+      height: 400px; }
   #faqs .questions dl dt, #faqs .questions dl dd {
     padding: 5%;
     font-weight: 100; }

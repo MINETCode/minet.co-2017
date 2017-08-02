@@ -229,7 +229,7 @@ header, footer {
     width: 100vw;
     height: 100vh;
     text-align: center;
-    padding-top: 15vh;
+    padding-top: 10vh;
     padding-left: 0;
     font-weight: 100;
     letter-spacing: 2px;
@@ -238,7 +238,8 @@ header, footer {
     overflow: scroll;
     li {
       list-style: none;
-      padding: 20px 0 20px 15px;
+      width: 100%;
+      padding: 15px 0;
     }
     i.ion-ios-close-empty {
       font-size: 2em;
@@ -710,7 +711,6 @@ form {
           display: block;
           width: 100%;
         }
-        padding: 0;
         .card {
           background: #FAFAFA;
           padding: 0;
