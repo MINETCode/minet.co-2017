@@ -1,4 +1,18 @@
 header.mono
+  ul#mobile-menu
+    i.ion-ios-close-empty
+    li
+      a(href='/') Home
+    li
+      a(href='/events') Events
+    li
+      a(href='/schedule') Schedule
+    li
+      a(href='/travel') Travel
+    li
+      a(href='/faqs') FAQs
+    li
+      a(href='https://facebok.com/minet.mis') Facebook
   .container
     .twelve.columns
       nav
@@ -16,14 +30,7 @@ header.mono
               a(href='/faqs') FAQs
       nav.mobile
         .wrapper
-          ul
-            li
-              a(href='/') Home
-            li
-              a(href='/events') Events
-            li
-              a(href='/schedule') Schedule
-            li
-              a(href='/travel') Travel
-            li
-              a(href='/faqs') FAQs
+          i.ion-navicon#toggle
+          a.minet(href='/') MINET
+
+          

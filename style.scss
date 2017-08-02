@@ -60,8 +60,8 @@ img::selection {
 }
 
 .small-text {
-  font-size: 0.95em;
-  letter-spacing: 0.3px;
+  font-size: 1em;
+  letter-spacing: 0.5px;
 }
 
 .serif {
@@ -204,21 +204,70 @@ section {
     font-weight: 800;
   }
   p {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
 header, footer {
   font-family: 'inconsolata' ,'droid-sans-mono', monospace;
   text-transform: uppercase;
-  font-size: 0.95em;
+  font-size: 1em;
   height: 70px;
   min-width: 100%;
   padding: 3vh 0;
   box-shadow: none;
+  ul#mobile-menu {
+    &.active {
+      display: block;
+    }
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.975);
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 15vh;
+    padding-left: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    overflow: hidden;
+    li {
+      list-style: none;
+      padding: 20px 0 20px 15px;
+    }
+    i.ion-ios-close-empty {
+      font-size: 2em;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 5px;
+      left: 32px;
+    }
+  }
   nav {
     &.mobile {
+      position: relative;
+      margin-bottom: 20px;
       display: none;
+      .wrapper {
+        width: 100%;
+        a {
+          width: 100%;
+          margin: 0;
+          font-size: 2em;
+        }
+        i.ion-navicon {
+          font-size: 2em;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          z-index: 900;
+        }
+      }
     }
     .wrapper {
       align-items: center;
@@ -420,7 +469,10 @@ form {
     font-size: 0.9em;
   }
   .card {
-    height: 530px;
+    height: 555px;
+    p:first-child {
+      margin-top: 0;
+    }
   }
   iframe {
     box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.05);
@@ -579,16 +631,12 @@ form {
         padding-bottom: 30px;
         &.mobile {
           display: block;
-          .wrapper.logo {
-            height: 0px;
-            padding: 25px 0 15px 0;
-            ul {
-              margin: 0;
-
-              li {
-                width: 100%;
-              }
-            }
+          width: 100%;
+          .wrapper {
+            text-align: center;
+          }
+          #mobile-menu {
+            display: none;
           }
         }
       }
@@ -603,13 +651,20 @@ form {
           display: none;
         }
         p {
-          margin: 10px 0 0 0;
+          margin: 0;
         }
       }
     }
 
     #bottom {
       display: none;
+      &.show-bottom {
+        display: block;
+        .six.columns {
+          display: inline-block;
+          width: 50%;
+        }
+      }
     }
 
     a.button {
@@ -654,12 +709,13 @@ form {
         padding: 0;
         .card {
           background: #FAFAFA;
-          padding: 0 5%;
+          padding: 0;
           height: auto;
         }
         iframe {
-          max-width: 100%;
-          margin-bottom: 0;
+          width: 100%;
+          margin: 0 0 8vh 0;
+          padding: 0;
           height: 400px;
         }
       }
@@ -670,6 +726,7 @@ form {
         dl {
           dt, dd {
             padding: 5%;
+            font-weight: 100;
           }
           dt {
             padding-right: 12.5%;

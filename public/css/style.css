@@ -281,8 +281,8 @@ img::selection {
   color: #AAAAAA; }
 
 .small-text {
-  font-size: 0.95em;
-  letter-spacing: 0.3px; }
+  font-size: 1em;
+  letter-spacing: 0.5px; }
 
 .serif {
   font-family: 'adobe-garamond-pro','Garamond','Georgia',serif; }
@@ -405,18 +405,60 @@ section {
     font-family: 'inconsolata' ,'droid-sans-mono', monospace;
     font-weight: 800; }
   section p {
-    font-size: 1.2em; }
+    font-size: 1.3em; }
 
 header, footer {
   font-family: 'inconsolata' ,'droid-sans-mono', monospace;
   text-transform: uppercase;
-  font-size: 0.95em;
+  font-size: 1em;
   height: 70px;
   min-width: 100%;
   padding: 3vh 0;
   box-shadow: none; }
+  header ul#mobile-menu, footer ul#mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.975);
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 15vh;
+    padding-left: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    overflow: hidden; }
+    header ul#mobile-menu.active, footer ul#mobile-menu.active {
+      display: block; }
+    header ul#mobile-menu li, footer ul#mobile-menu li {
+      list-style: none;
+      padding: 20px 0 20px 15px; }
+    header ul#mobile-menu i.ion-ios-close-empty, footer ul#mobile-menu i.ion-ios-close-empty {
+      font-size: 2em;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 5px;
+      left: 32px; }
   header nav.mobile, footer nav.mobile {
+    position: relative;
+    margin-bottom: 20px;
     display: none; }
+    header nav.mobile .wrapper, footer nav.mobile .wrapper {
+      width: 100%; }
+      header nav.mobile .wrapper a, footer nav.mobile .wrapper a {
+        width: 100%;
+        margin: 0;
+        font-size: 2em; }
+      header nav.mobile .wrapper i.ion-navicon, footer nav.mobile .wrapper i.ion-navicon {
+        font-size: 2em;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 900; }
   header nav .wrapper, footer nav .wrapper {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -579,7 +621,9 @@ form input[type='submit'] {
   font-size: 0.9em; }
 
 #travel .card {
-  height: 530px; }
+  height: 555px; }
+  #travel .card p:first-child {
+    margin-top: 0; }
 
 #travel iframe {
   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.05); }
@@ -700,14 +744,12 @@ img.messenger-code {
     display: none;
     padding-bottom: 30px; }
     header nav.mobile {
-      display: block; }
-      header nav.mobile .wrapper.logo {
-        height: 0px;
-        padding: 25px 0 15px 0; }
-        header nav.mobile .wrapper.logo ul {
-          margin: 0; }
-          header nav.mobile .wrapper.logo ul li {
-            width: 100%; }
+      display: block;
+      width: 100%; }
+      header nav.mobile .wrapper {
+        text-align: center; }
+      header nav.mobile #mobile-menu {
+        display: none; }
   footer {
     text-align: center; }
     footer .columns.six {
@@ -716,9 +758,14 @@ img.messenger-code {
       footer .columns.six.right {
         display: none; }
       footer .columns.six p {
-        margin: 10px 0 0 0; }
+        margin: 0; }
   #bottom {
     display: none; }
+    #bottom.show-bottom {
+      display: block; }
+      #bottom.show-bottom .six.columns {
+        display: inline-block;
+        width: 50%; }
   a.button {
     display: block; }
     a.button.cta, a.button.ghost {
@@ -747,14 +794,16 @@ img.messenger-code {
         width: 100%; }
       #travel .container .card {
         background: #FAFAFA;
-        padding: 0 5%;
+        padding: 0;
         height: auto; }
       #travel .container iframe {
-        max-width: 100%;
-        margin-bottom: 0;
+        width: 100%;
+        margin: 0 0 8vh 0;
+        padding: 0;
         height: 400px; }
   #faqs .questions dl dt, #faqs .questions dl dd {
-    padding: 5%; }
+    padding: 5%;
+    font-weight: 100; }
   #faqs .questions dl dt {
     padding-right: 12.5%; }
   img.messenger-code {

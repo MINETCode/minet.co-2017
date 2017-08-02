@@ -20,3 +20,8 @@ $('#faqs dt').click(function() {
   $(this).addClass('active');
   $(this).next().slideDown().siblings('dd').slideUp();
 });
+
+$('header i').click(function() {
+  console.log('clicked');
+  $('ul#mobile-menu').toggleClass('active');
+});
