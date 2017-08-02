@@ -21,7 +21,16 @@ $('#faqs dt').click(function() {
   $(this).next().slideDown().siblings('dd').slideUp();
 });
 
-$('header i').click(function() {
-  console.log('clicked');
-  $('ul#mobile-menu').toggleClass('active');
+$('header i#open').click(function() {
+  $('ul#mobile-menu').addClass('active');
+  $('html').css('overflow', 'hidden');
+  $('body').bind('touchmove', function(e) {
+      e.preventDefault()
+  });
+});
+
+$('header i#close').click(function() {
+  $('ul#mobile-menu').removeClass('active');
+  $('html').css('overflow', 'scroll');
+  $('body').unbind('touchmove');
 });
