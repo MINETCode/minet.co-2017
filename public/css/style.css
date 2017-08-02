@@ -443,7 +443,7 @@ header, footer {
       padding: 0;
       position: absolute;
       top: 5px;
-      left: 32px; }
+      left: 20px; }
   header nav.mobile, footer nav.mobile {
     position: relative;
     margin-bottom: 20px;
@@ -498,6 +498,9 @@ footer {
   footer a {
     border: none;
     font-weight: 400; }
+
+#bottom.show-bottom {
+  display: none; }
 
 #bottom h3.bottom-title {
   font-family: 'basis-mono', 'inconsolata' ,'droid-sans-mono', monospace;

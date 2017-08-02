@@ -246,7 +246,7 @@ header, footer {
       padding: 0;
       position: absolute;
       top: 5px;
-      left: 32px;
+      left: 20px;
     }
   }
   nav {
@@ -309,6 +309,9 @@ footer {
 }
 
 #bottom {
+  &.show-bottom {
+    display: none;
+  }
   h3.bottom-title {
     font-family: 'basis-mono', 'inconsolata' ,'droid-sans-mono', monospace;
     text-transform: uppercase;
