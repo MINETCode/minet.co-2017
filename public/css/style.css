@@ -430,7 +430,8 @@ header, footer {
     font-weight: 100;
     letter-spacing: 2px;
     font-size: 1.5em;
-    overflow: hidden; }
+    overflow: hidden;
+    overflow: scroll; }
     header ul#mobile-menu.active, footer ul#mobile-menu.active {
       display: block; }
     header ul#mobile-menu li, footer ul#mobile-menu li {
@@ -825,7 +826,9 @@ img.messenger-code {
 @media (max-width: 750px) {
   #x img, #make img {
     padding-top: 100px;
-    max-width: 130px; } }
+    max-width: 130px; }
+  ul#mobile-menu {
+    padding-top: 0; } }
 
 @media (max-width: 500px) {
   #x img, #make img {
