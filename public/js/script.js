@@ -34,3 +34,42 @@ $('header i#close').click(function() {
   $('html').css('overflow', 'scroll');
   $('body').unbind('touchmove');
 });
+
+$('header i#close').click(function() {
+  $('ul#mobile-menu').removeClass('active');
+  $('html').css('overflow', 'scroll');
+  $('body').unbind('touchmove');
+});
+
+$('.slack').mouseenter(function() {
+  $('input#transform').prop('type', 'text');
+}).mouseleave(function() {
+  $('input#transform').prop('type', 'password');
+});
+
+$('button.copy').click(function() {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(this).prev().val()).select();
+  document.execCommand("copy");
+  $temp.remove();
+});
+
+$('ul#logsList li').each(function() {
+  var raw = $(this).children('p').children('span.logTime').text();
+  minutes = Math.floor(raw/60000);
+  hours = Math.floor(minutes/60);
+  days = Math.round(hours/24);
+  if(days > 1) {
+    raw = days + ' days ago';
+  } else if (days == 1) {
+    raw = days + ' day ago';
+  } else if (hours > 1) {
+    raw = hours + ' hrs ago';
+  } else if (hours == 1) {
+    raw = hours + ' hrs ago';
+  } else {
+    raw = minutes + ' min ago';
+  }
+  $(this).children('p').children('span.logTime').text(raw);
+});

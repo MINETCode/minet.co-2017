@@ -1,36 +1,36 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-
+var multer = require('multer');
 
 //Render home page
 router.get('/', (req, res, next) => {
-  return res.render('index');
+  return res.render('./index/index');
 });
 
 //Render events page
 router.get('/events', (req, res, next) => {
-  return res.render('events');
+  return res.render('./index/events');
 });
 
 //Render travel page
 router.get('/travel', (req, res, next) => {
-  return res.render('travel');
+  return res.render('./index/travel');
 });
 
 //Render FAQs page
 router.get('/faqs', (req, res, next) => {
-  return res.render('faqs');
+  return res.render('./index/faqs');
 });
 
 //Render schedule page
 router.get('/schedule', (req, res, next) => {
-  return res.render('schedule');
+  return res.render('./index/schedule');
 });
 
 //Render request page
 router.get('/request', (req, res, next) => {
-  return res.render('request');
+  return res.render('./index/request');
 });
 
 //Render request page
@@ -53,7 +53,6 @@ router.post('/request', (req, res, next) => {
     to: 'minet+requests@themis.in', // list of receivers
     subject: 'Invitation Request for MINET X', // Subject line
     text: text //, // plaintext body
-    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
   };
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
@@ -67,7 +66,7 @@ router.post('/request', (req, res, next) => {
 
 //Render rsvp page
 router.get('/rsvp', (req, res, next) => {
-  return res.render('rsvp');
+  return res.render('./index/rsvp');
 });
 
 //Render rsvp page
@@ -105,6 +104,42 @@ router.post('/rsvp', (req, res, next) => {
     {
       'name': 'Modern School, Barakhamba Road',
       'code': 'RXJHQGY53F'
+    },
+    {
+      'name': 'Venkateshwar International School',
+      'code': 'VPF28Y5T67'
+    },
+    {
+      'name': 'Sanskriti School',
+      'code': 'T985WKND5M'
+    },
+    {
+      'name': 'Montfort School',
+      'code': 'C3WUL8ZM1C'
+    },
+    {
+      'name': 'Amity International School, Sector-46',
+      'code': 'I2INHNFANT'
+    },
+    {
+      'name': 'Army Public School, Dhaula Kuan',
+      'code': 'DBXYFN4JUI'
+    },
+    {
+      'name': 'Jayshree Periwal International School',
+      'code': 'DBXYFN4JUI'
+    },
+    {
+      'name': 'New Era Public School',
+      'code': '8F0PSY0RUQ'
+    },
+    {
+      'name': 'Delhi Public School Gurgaon, Sector-45',
+      'code': '849OQDFP92'
+    },
+    {
+      'name': 'Bal Bharti Public School, Pitampura',
+      'code': '7LO8CZ13HG'
     },
   ];
 
@@ -150,13 +185,13 @@ router.post('/rsvp', (req, res, next) => {
 
       if (error) {
         console.log(error);
-        return res.re('error');
+        return res.render('error');
       } else {
-        return res.render('rsvp', { result: 'Your attendance has been confirmed.' });
+        return res.render('./index/rsvp', { result: 'Your attendance has been confirmed.' });
       };
     });
   } else {
-    return res.render('rsvp', { result: 'Invalid invite code.' });
+    return res.render('./index/rsvp', { result: 'Invalid invite code.' });
   }
 
 });
@@ -165,7 +200,5 @@ router.post('/rsvp', (req, res, next) => {
 router.get('/success', (req, res, next) => {
   return res.render('success');
 });
-
-
 
 module.exports = router;

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MINET font";
+  src: url("../fonts/minet.eot");
+  src: url("../fonts/minet.eot?#iefix") format("embedded-opentype"), url("../fonts/minet.woff2") format("woff2"), url("../fonts/minet.woff") format("woff"), url("../fonts/minet.ttf") format("truetype"), url("../fonts/minet.svg#virgo_01regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -230,13 +237,9 @@ html {
   display: table;
   clear: both; }
 
-@font-face {
-  font-family: "MINET font";
-  src: url("../fonts/minet.eot");
-  src: url("../fonts/minet.eot?#iefix") format("embedded-opentype"), url("../fonts/minet.woff2") format("woff2"), url("../fonts/minet.woff") format("woff"), url("../fonts/minet.ttf") format("truetype"), url("../fonts/minet.svg#virgo_01regular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
+/***************
+ * General Styling *
+ ***************/
 *, *:before, *:after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box; }
@@ -268,84 +271,6 @@ img::-moz-selection {
 img::selection {
   background: transparent; }
 
-/***************
- * Utility Classes *
- ***************/
-.center {
-  text-align: center; }
-
-.right {
-  text-align: right; }
-
-.grey-text {
-  color: #AAAAAA; }
-
-.small-text {
-  font-size: 1em;
-  letter-spacing: 0.5px; }
-
-.serif {
-  font-family: 'adobe-garamond-pro','Garamond','Georgia',serif; }
-
-.mono {
-  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
-  font-weight: 600; }
-
-.no-m {
-  margin: 0; }
-
-.no-m-b {
-  margin-bottom: 0; }
-
-.no-m-r {
-  margin-right: 0; }
-
-.no-m-l {
-  margin-left: 0; }
-
-.no-m-t {
-  margin-top: 0; }
-
-.no-p {
-  padding: 0; }
-
-.card {
-  background: #FFF;
-  max-width: 100%;
-  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
-  padding: 2.5%; }
-
-.minet {
-  font-family: "MINET font",sans-serif;
-  line-height: 75px;
-  border: none;
-  color: #6699EE;
-  font-size: 1.8em;
-  text-decoration: none;
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
-  margin-left: -20px; }
-
-.table {
-  display: table; }
-
-.table-cell {
-  display: table-cell; }
-
-code {
-  background: #F5F5F5;
-  font-size: 2em;
-  border-radius: 3px;
-  letter-spacing: 10px;
-  text-align: center;
-  padding: 12.5px 12.5px 12.5px 20px;
-  margin: 0 auto;
-  border: 1px solid #eee;
-  display: inline-block; }
-
-/***************
- * General Styling *
- ***************/
 a, a:visited {
   color: #6699EE;
   text-decoration: none;
@@ -556,14 +481,80 @@ form input[type='submit'] {
     border-color: #216BE6;
     color: #FFF; }
 
-/***************
- * Intro Styling *
- ***************/
-#intro h2.title {
-  font-weight: 800; }
+p.error {
+  color: #216BE6; }
 
-#intro p:last-child {
+.center {
+  text-align: center; }
+
+.right {
+  text-align: right; }
+
+.grey-text {
+  color: #AAAAAA; }
+
+.small-text {
+  font-size: 1em;
+  letter-spacing: 0.5px; }
+
+.serif {
+  font-family: 'adobe-garamond-pro','Garamond','Georgia',serif; }
+
+.mono {
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
+  font-weight: 600; }
+
+.no-m {
+  margin: 0; }
+
+.no-m-b {
   margin-bottom: 0; }
+
+.no-m-r {
+  margin-right: 0; }
+
+.no-m-l {
+  margin-left: 0; }
+
+.no-m-t {
+  margin-top: 0; }
+
+.no-p {
+  padding: 0; }
+
+.card {
+  background: #FFF;
+  max-width: 100%;
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
+  padding: 2.5%; }
+
+.minet {
+  font-family: "MINET font",sans-serif;
+  line-height: 75px;
+  border: none;
+  color: #6699EE;
+  font-size: 1.8em;
+  text-decoration: none;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  margin-left: -20px; }
+
+.table {
+  display: table; }
+
+.table-cell {
+  display: table-cell; }
+
+code {
+  background: #F5F5F5;
+  font-size: 2em;
+  border-radius: 3px;
+  letter-spacing: 10px;
+  text-align: center;
+  padding: 12.5px 12.5px 12.5px 20px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  display: inline-block; }
 
 /***************
  * Home Styling *
@@ -592,6 +583,25 @@ form input[type='submit'] {
   margin: 50px 50px 0px 0px; }
 
 /***************
+ * Forms Styling *
+ ***************/
+#form .card.form {
+  background: #FFF;
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100%; }
+
+/***************
+ * Intro Styling *
+ ***************/
+#intro h2.title {
+  font-weight: 800; }
+
+#intro p:last-child {
+  margin-bottom: 0; }
+
+/***************
  * Events Styling *
  ***************/
 .event h2.title {
@@ -617,21 +627,6 @@ form input[type='submit'] {
       margin-bottom: 0; }
   .event .card p {
     margin: 0; }
-
-/***************
-  * Travel Styling *
-  ***************/
-#travel .mono {
-  font-weight: 100;
-  font-size: 0.9em; }
-
-#travel .card {
-  height: 555px; }
-  #travel .card p:first-child {
-    margin-top: 0; }
-
-#travel iframe {
-  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.05); }
 
 /***************
  * Schedule Styling *
@@ -682,8 +677,23 @@ form input[type='submit'] {
         visibility: hidden; }
 
 /***************
-   * FAQs Styling *
-   ***************/
+ * Travel Styling *
+ ***************/
+#travel .mono {
+  font-weight: 100;
+  font-size: 0.9em; }
+
+#travel .card {
+  height: 555px; }
+  #travel .card p:first-child {
+    margin-top: 0; }
+
+#travel iframe {
+  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.05); }
+
+/***************
+ * FAQs Styling *
+ ***************/
 #faqs .questions {
   background: #FFF;
   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
@@ -731,19 +741,163 @@ img.messenger-code {
   max-width: 180px;
   margin-top: -30px; }
 
-/***************
-   * Request Styling *
-   ***************/
-#request .card.form {
-  background: #FFF;
-  box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.02);
-  width: 500px;
-  margin: 0 auto;
-  max-width: 100%; }
+#dashboard p.error {
+  color: #216BE6; }
+
+#dashboard .card {
+  margin-bottom: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  position: relative; }
+  #dashboard .card a.edit {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    text-transform: uppercase;
+    font-size: 1em;
+    cursor: pointer; }
+
+#dashboard h1.card-heading {
+  margin: 5px 0;
+  font-size: 2.8em;
+  font-weight: bold; }
+
+#dashboard h2.card-subhead {
+  color: #AAAAAA;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1em; }
+
+#dashboard .totalFunds h1 {
+  font-size: 4em;
+  color: #6699EE;
+  margin: 30px 0 0 0; }
+
+#dashboard .team .six p.person {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 0.95em; }
+  #dashboard .team .six p.person img, #dashboard .team .six p.person span {
+    display: inline; }
+  #dashboard .team .six p.person img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 100%;
+    border: 2px solid #eee;
+    margin-right: 20px; }
+
+#dashboard .logs ul {
+  padding: 0; }
+  #dashboard .logs ul li {
+    list-style: none;
+    padding: 2.5%; }
+    #dashboard .logs ul li:nth-child(odd) {
+      background: #F5F5F5; }
+    #dashboard .logs ul li p {
+      margin: 0;
+      font-size: 0.95em;
+      text-transform: capitalize; }
+      #dashboard .logs ul li p span.logTime {
+        float: right;
+        text-transform: uppercase;
+        color: #AAA;
+        letter-spacing: 1px; }
+
+#dashboard .startup .logo-container {
+  text-align: center; }
+  #dashboard .startup .logo-container .logo-placeholder-container {
+    height: 100px;
+    width: 100px;
+    background: #6699EE;
+    color: #FFF;
+    margin: 20px auto 30px auto;
+    line-height: 100px;
+    border-radius: 6px;
+    font-size: 4em; }
+  #dashboard .startup .logo-container img {
+    width: 100px;
+    margin: 20px 0; }
+
+#dashboard .startup p {
+  font-size: 0.95em; }
+
+#dashboard .slack p {
+  font-weight: 100;
+  margin-top: 2.5px; }
+
+#dashboard .slack button.cta {
+  width: 100%;
+  padding: 7.5px 0;
+  margin: 5px 0;
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
+  color: #FFF;
+  background: #6699EE;
+  text-align: center;
+  border: 1.5px solid #6699EE;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  outline: none; }
+  #dashboard .slack button.cta:hover {
+    background: #216BE6;
+    border-color: #216BE6; }
+
+#dashboard .slack ul {
+  padding: 0; }
+  #dashboard .slack ul li {
+    list-style: none; }
+    #dashboard .slack ul li p {
+      font-size: 1em; }
+      #dashboard .slack ul li p label {
+        display: block;
+        font-weight: 800; }
+      #dashboard .slack ul li p button {
+        float: right;
+        width: 35%;
+        text-align: center;
+        display: inline;
+        padding: 7.1px 5px;
+        letter-spacing: 0.3px;
+        border-radius: 4px;
+        background: none;
+        box-shadow: none;
+        border: 1px solid #eee;
+        outline: none; }
+      #dashboard .slack ul li p button:focus {
+        background: #eee; }
+      #dashboard .slack ul li p input, #dashboard .slack ul li p button {
+        display: inline; }
+      #dashboard .slack ul li p input {
+        width: 62.5%;
+        display: inline;
+        padding: 10px 15px;
+        letter-spacing: 0.3px;
+        border-radius: 4px;
+        cursor: pointer; }
+      #dashboard .slack ul li p input:disabled {
+        background: #F5F5F5;
+        border: 1px solid #eee; }
+
+form.team .card input:nth-of-type(even) {
+  margin-bottom: 50px; }
+
+form.team .card input:last-child {
+  margin-bottom: 0; }
+
+form.team .card input:disabled {
+  background: #F5F5F5; }
+
+form.team .card.submit input {
+  margin: 0; }
 
 /***************
-   * Responsive Styling *
-   ***************/
+ * Responsive Styling *
+ ***************/
 @media (max-width: 1000px) {
   header nav {
     display: none;
