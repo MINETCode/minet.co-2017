@@ -17,8 +17,6 @@ block content
             form.mono(action='/dashboard/startup', method='post')
               label(for='startupName') Startup Name:
               input#startupName(type='text', name='startupName', placeholder='Startup Name', value=currentUser.startup.name required)
-              //- label(for='startupImage') Startup Logo:
-              //- input#startupImage(type='file', name='startupImage')
               label(for='startupIndustry') Startup Industry:
               select#startupIndustry(name='startupIndustry')
                 if currentUser.startup.industry
@@ -34,12 +32,16 @@ block content
                 option Defence
                 option Retail
                 option Education
-                option Medicine
+                option Health
                 option Social Media
                 option Research
                 option Transport
+              label.upload 
+                a(href='https://ctrlq.org/images/', target='_blank') Upload image to CTRLQ
+              label(for='startupImage') Logo link:
+              input#startupImage(type='text', name='startupImage', placeholder="Paste the Direct Link link here" value=currentUser.startup.imageURL)
               label(for='startupDescription') Startup Description:
-              textarea#startupDescription(type='text', name='startupDescription', placeholder='250 characters', required) #{currentUser.startup.description}
+              textarea#startupDescription(type='text', name='startupDescription', placeholder='200 characters', max-length='200', required) #{currentUser.startup.description}
               input(type='submit', value='Save changes')
 
   script(type='text/javascript').

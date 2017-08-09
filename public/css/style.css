@@ -741,6 +741,24 @@ img.messenger-code {
   max-width: 180px;
   margin-top: -30px; }
 
+button.cta {
+  width: 100%;
+  padding: 7.5px 0;
+  margin: 5px 0;
+  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
+  color: #FFF;
+  background: #6699EE;
+  text-align: center;
+  border: 1.5px solid #6699EE;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  outline: none; }
+  button.cta:hover {
+    background: #216BE6;
+    border-color: #216BE6; }
+
 #dashboard p.error {
   color: #216BE6; }
 
@@ -819,8 +837,8 @@ img.messenger-code {
     border-radius: 6px;
     font-size: 4em; }
   #dashboard .startup .logo-container img {
-    width: 100px;
-    margin: 20px 0; }
+    width: 150px;
+    margin: 30px 0 10px 0; }
 
 #dashboard .startup p {
   font-size: 0.95em; }
@@ -828,24 +846,6 @@ img.messenger-code {
 #dashboard .slack p {
   font-weight: 100;
   margin-top: 2.5px; }
-
-#dashboard .slack button.cta {
-  width: 100%;
-  padding: 7.5px 0;
-  margin: 5px 0;
-  font-family: 'inconsolata' ,'droid-sans-mono', monospace;
-  color: #FFF;
-  background: #6699EE;
-  text-align: center;
-  border: 1.5px solid #6699EE;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  outline: none; }
-  #dashboard .slack button.cta:hover {
-    background: #216BE6;
-    border-color: #216BE6; }
 
 #dashboard .slack ul {
   padding: 0; }
@@ -894,6 +894,27 @@ form.team .card input:disabled {
 
 form.team .card.submit input {
   margin: 0; }
+
+.form.manage form {
+  display: none; }
+
+.card.leaderboard {
+  padding: 0; }
+  .card.leaderboard table {
+    width: 100%;
+    text-align: center; }
+    .card.leaderboard table th {
+      background: #216BE6;
+      color: #fff; }
+    .card.leaderboard table th, .card.leaderboard table td {
+      padding: 1.5%; }
+    .card.leaderboard table tr:nth-child(odd) {
+      background: #F5F5F5; }
+
+label.upload {
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer; }
 
 /***************
  * Responsive Styling *
@@ -984,7 +1005,9 @@ form.team .card.submit input {
     padding-top: 100px;
     max-width: 130px; }
   ul#mobile-menu {
-    padding-top: 0; } }
+    padding-top: 0; }
+  .card.logs {
+    display: none; } }
 
 @media (max-width: 500px) {
   #x img, #make img {

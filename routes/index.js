@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-var multer = require('multer');
 
 //Render home page
 router.get('/', (req, res, next) => {

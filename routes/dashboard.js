@@ -3,17 +3,15 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var gravatar = require('gravatar');
-var multer = require('multer');
 var User = require("../models/user");
 var Logs = require("../models/logs");
 
-//Upload file config
-
-function createLog(action, username) {
+function createLog(action, category, username) {
   var logData = {
     username: username,
     action: action,
-    time: new Date()
+    time: new Date(),
+    category: category
   }
   Logs.create(logData, (error, log) => {
     if (error) {
@@ -26,9 +24,11 @@ function createLog(action, username) {
 router.get('/', (req, res, next) => {
   if(!req.user) {
     return res.redirect('/dashboard/login');
+  } else if (req.user.firstUse){
+    return res.redirect('/dashboard/team');
   } else {
-    Logs.find({username: req.user.username}).sort('-time').limit(10).exec(function(err, logs) {
-      return res.render('./dashboard/index', {logs: logs, currentDate: new Date()});
+    Logs.find({username: req.user.username}).sort('-time').limit(15).exec(function(err, logs) {
+      return res.render('./dashboard/index', {logs: logs, imageURL: req.user.imageURL, currentDate: new Date()});
     });
   }
 });
@@ -45,10 +45,10 @@ router.get('/login', (req, res, next) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', function(err, user) {
     if (err) {
-      return res.render('./dashboard/login', { title: 'Login', error : err.message });
+      return res.render('./dashboard/login', { error : err.message });
     }
     if (!user) {
-      return res.render('./dashboard/login', { title: 'Login', error : 'Invalid credentials.' });
+      return res.render('./dashboard/login', { error : 'Invalid credentials.' });
     }
     req.logIn(user, function(err) {
       return res.redirect('/dashboard');
@@ -64,6 +64,9 @@ router.get('/logout', (req, res, next) => {
 
 //Render register page
 router.get('/register', (req, res, next) => {
+  if (req.user.username != 'MINET' || !req.user.username) {
+    return res.redirect('/dashboard');
+  }
   return res.render('./dashboard/register');
 });
 
@@ -73,12 +76,16 @@ router.post('/register', function(req, res) {
       username : req.body.username,
       email: req.body.email,
       schoolName: req.body.schoolName,
+      slack: {
+        email: req.body.slackEmail,
+        password: req.body.password
+      }
     }), req.body.password, function(err, user) {
     if (err) {
-      return res.render('./dashboard/register', { title: 'Register', error : 'That team-name has already been taken.' });
+      return res.render('./dashboard/register', { error : 'That team-name has already been taken.' });
     }
-    createLog('Account created', req.body.username);
-    return res.render('./dashboard/register', { title: 'Register', error : 'Team registered successfully.' });
+    createLog('Account created', 'edit', req.body.username);
+    return res.render('./dashboard/register', { error : 'Team registered successfully.' });
   });
 });
 
@@ -141,26 +148,11 @@ router.post('/team', function(req, res) {
       user.team.pitching.p1.email = req.body.pitchingParticipant1Email;
       user.team.pitching.p1.imageURL = gravatar.url(user.team.pitching.p1.email);
 
-      user.save();
-      createLog('Team Info Updated', req.user.username);
-      return res.redirect('/dashboard/team');
-    }
-  });
-});
+      user.firstUse = 0;
 
-//Edit startup page
-router.post('/startup', function(req, res) {
-  User.findById(req.user.id, function(err, user) {
-    if (!user) {
-      return res.redirect('/dashboard');
-    } else {
-      //SOMETHING TO DO WITH UPLOADING FILES
-      user.startup.name = req.body.startupName;
-      user.startup.description = req.body.startupDescription;
-      user.startup.industry = req.body.startupIndustry;
       user.save();
-      createLog('Startup Info Updated', req.user.username);
-      return res.redirect('/dashboard/startup');
+      createLog('Team Info Updated', 'edit', req.user.username);
+      return res.redirect('/dashboard/team');
     }
   });
 });
@@ -170,5 +162,88 @@ router.get('/startup', (req, res, next) => {
   return res.render('./dashboard/startup');
 });
 
+
+//Edit startup page
+router.post('/startup', function(req, res) {
+  User.findById(req.user.id, function(err, user) {
+    if (!user) {
+      return res.redirect('/dashboard');
+    } else {
+      user.startup.name = req.body.startupName;
+      user.startup.description = req.body.startupDescription;
+      user.startup.industry = req.body.startupIndustry;
+      user.startup.imageURL = req.body.startupImage;
+      user.save();
+      createLog('Startup Info Updated', 'edit', req.user.username);
+      return res.redirect('/dashboard/startup');
+    }
+  });
+});
+
+//Render funds page
+router.get('/funds', (req, res, next) => {
+  if (!req.user.username) {
+    return res.redirect('/dashboard');
+  }
+  Logs.find({username: req.user.username, 'category': 'funds'}).sort('-time').exec(function(err, logs) {
+    return res.render('./dashboard/funds', {logs: logs});
+  });
+});
+
+
+//Render manage page
+router.get('/manage', (req, res, next) => {
+  if (req.user.username != 'MINET' || !req.user.username) {
+    return res.redirect('/dashboard');
+  }
+  User.find().sort('username').exec(function(err, teams) {
+    return res.render('./dashboard/manage', { teams: teams });
+  });
+});
+
+//ADD EVENT RESULTS
+router.post('/manage-results', function(req, res) {
+  User.findOne({schoolName: req.body.teamName1}).exec(function(err, team) {
+    var fundsToBeAdded;
+    if (req.body.eventPosition == 1) {
+      fundsToBeAdded = 100000;
+    } else if (req.body.eventPosition == 2) {
+      fundsToBeAdded = 75000;
+    } else if (req.body.eventPosition == 3) {
+      fundsToBeAdded = 50000;
+    }
+    team.funds += fundsToBeAdded;
+    team.save();
+    createLog('Obtained #' + req.body.eventPosition + ' in ' + req.body.eventName, 'funds', team.username);
+    return res.redirect('/dashboard/manage');
+  });
+});
+
+//ADD STOCKS MANUALLY
+router.post('/manage-manual', function(req, res) {
+  User.findOne({schoolName: req.body.teamName2}).exec(function(err, team) {
+    var fundsToBeAdded = req.body.stockValue;
+    team.funds += parseInt(fundsToBeAdded);
+    team.save();
+    createLog(fundsToBeAdded + ' due to ' + req.body.stockReason, 'funds', team.username);
+    return res.redirect('/dashboard/manage');
+  });
+});
+
+//ADD STOCKS MANUALLY
+router.post('/manage-dq', function(req, res) {
+  User.findOne({schoolName: req.body.teamName3}).remove().exec();
+  return res.redirect('/dashboard/manage');
+});
+
+//Render manage page
+router.get('/logs', (req, res, next) => {
+  if (req.user.username != 'MINET' || !req.user.username) {
+    return res.redirect('/dashboard');
+  }
+  Logs.find().sort('-time').exec(function(err, logs) {
+    return res.render('./dashboard/logs', { logs: logs });
+  });
+});
 
 module.exports = router;

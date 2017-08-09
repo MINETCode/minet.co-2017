@@ -12,6 +12,7 @@ block content
       .row
         .six.columns
           .card.totalFunds
+            a.edit(href='/dashboard/funds') More
             h1.center $#{currentUser.funds}
             p.caption.center Total Funds
           .card.logs
@@ -26,15 +27,22 @@ block content
         .six.columns
           .card.startup
             a.edit(href='/dashboard/startup') Edit
-            h1.card-heading.center #{currentUser.startup.name}
-            h2.card-subhead.center #{currentUser.startup.industry}
+            if currentUser.startup.name
+              h1.card-heading.center #{currentUser.startup.name}
+            else
+              h1.card-heading.center Startup Name
+            if currentUser.startup.industry
+              h2.card-subhead.center #{currentUser.startup.industry}
+            else
+              h2.card-subhead.center Industry
             .logo-container
-              .logo-placeholder-container
-                span.logo-placeholder T
-              //- img.logo(src='http://minet.co/img/icon.png')
+              img.logo(src=currentUser.startup.imageURL)
             p
               u Description:
-            p #{currentUser.startup.description}
+            if currentUser.startup.description
+              p #{currentUser.startup.description}
+            else
+              p Startup description goes here.
           
           .card.slack
             h1.card-heading.center Slack
@@ -42,14 +50,15 @@ block content
               li
                 p
                   label Email:
-                  input(type='email', value=currentUser.email, disabled)
+                  input(type='email', value=currentUser.slack.email, disabled)
                   button.copy Copy email
               li
                 p
                   label Password:
-                  input#transform(type='password', value=currentUser.email, disabled)
+                  input#transform(type='password', value=currentUser.slack.password, disabled)
                   button.copy Copy password
-            button.cta(href='https://minet-x.slack.com/') Launch Slack
+            a(href='https://minet-x.slack.com/' target='_blank')
+              button.cta Launch Slack
             
           .card.team
             a.edit(href='/dashboard/team') Edit

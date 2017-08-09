@@ -73,3 +73,14 @@ $('ul#logsList li').each(function() {
   }
   $(this).children('p').children('span.logTime').text(raw);
 });
+
+$('.form.manage #menu button').click(function() {
+  $('.form.manage #menu').css('display', 'none');
+  if($(this).is('#results-button')) {
+    $('form#results').css('display', 'block');
+  } else if($(this).is('#manual-button')) {
+    $('form#manual').css('display', 'block');
+  } else if($(this).is('#dq-button')) {
+    $('form#dq').css('display', 'block');
+  }
+});

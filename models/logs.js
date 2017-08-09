@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var LogsSchema = new Schema({
   username: String,
   action: String,
-  time: Date
+  time: Date,
+  category: String,
 });
 
 
