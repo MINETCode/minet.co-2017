@@ -64,9 +64,9 @@ router.get('/logout', (req, res, next) => {
 
 //Render register page
 router.get('/register', (req, res, next) => {
-  if (req.user.username != 'MINET' || !req.user.username) {
-    return res.redirect('/dashboard');
-  }
+  // if (req.user.username != 'MINET' || !req.user.username) {
+  //   return res.redirect('/dashboard');
+  // }
   return res.render('./dashboard/register');
 });
 
