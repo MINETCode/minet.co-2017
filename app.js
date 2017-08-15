@@ -9,7 +9,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var app = express();
 
 //Make new databse
-mongoose.connect("mongodb://MINET:AbNovTeSleknan4@ds131583.mlab.com:31583/minetx");
+mongoose.connect("mongodb://MINET:zopper123@ds131583.mlab.com:31583/minetx");
 var db = mongoose.connection;
 //If Mongo Error
 db.on('error', console.error.bind(console, 'connection error'));

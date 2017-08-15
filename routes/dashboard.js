@@ -193,7 +193,7 @@ router.get('/funds', (req, res, next) => {
 
 //Render manage page
 router.get('/manage', (req, res, next) => {
-  if (req.user.username != 'MINET' || !req.user.username) {
+  if (req.user.username != 'minet123' || !req.user.username) {
     return res.redirect('/dashboard');
   }
   User.find().sort('username').exec(function(err, teams) {
@@ -238,7 +238,7 @@ router.post('/manage-dq', function(req, res) {
 
 //Render manage page
 router.get('/logs', (req, res, next) => {
-  if (req.user.username != 'MINET' || !req.user.username) {
+  if (req.user.username != 'minet123' || !req.user.username) {
     return res.redirect('/dashboard');
   }
   Logs.find().sort('-time').exec(function(err, logs) {

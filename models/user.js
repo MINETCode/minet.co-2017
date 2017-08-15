@@ -8,6 +8,14 @@ var UserSchema = new Schema({
   email: String,
   password: String,
   schoolName: String,
+  cryptxLevel: {
+    type: Number,
+    default: 0
+  },
+  lastLevelOn: {
+    type: Date,
+    default: Date.now
+  },
   firstUse: {
     type: Number,
     default: 1
