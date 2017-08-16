@@ -7,6 +7,11 @@ router.get('/', (req, res, next) => {
   return res.render('./index/index');
 });
 
+//Render request page
+router.get('/vvpr0', (req, res, next) => {
+  return res.redirect('http://sidhant.me/x-2017/vvpr0/');
+});
+
 //Render events page
 router.get('/events', (req, res, next) => {
   return res.render('./index/events');
