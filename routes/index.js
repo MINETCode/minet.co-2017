@@ -12,6 +12,11 @@ router.get('/vvpr0', (req, res, next) => {
   return res.redirect('http://sidhant.me/x-2017/vvpr0/');
 });
 
+//Render request page
+router.get('/ayehaye', (req, res, next) => {
+  return res.redirect('http://shrey.co/quizprelims17/');
+});
+
 //Render events page
 router.get('/events', (req, res, next) => {
   return res.render('./index/events');
