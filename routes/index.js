@@ -28,7 +28,7 @@ router.get('/curry-ing', (req, res, next) => {
 });
 
 //Render request page
-router.get('/ayehaye', (req, res, next) => {
+router.get('/quizprelims17', (req, res, next) => {
   return res.redirect('http://shrey.co/quizprelims17/');
 });
 
