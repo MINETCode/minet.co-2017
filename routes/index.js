@@ -23,6 +23,11 @@ router.get('/vvpr0', (req, res, next) => {
 });
 
 //Render request page
+router.get('/curry-ing', (req, res, next) => {
+  return res.redirect('http://sidhant.me/x-2017/curry-ing/');
+});
+
+//Render request page
 router.get('/ayehaye', (req, res, next) => {
   return res.redirect('http://shrey.co/quizprelims17/');
 });
