@@ -916,6 +916,26 @@ label.upload {
   margin-bottom: 20px;
   cursor: pointer; }
 
+section#main .leaderboard {
+  width: 100%;
+  max-width: 100%;
+  padding: 3%;
+  text-align: center;
+  margin: 0 auto; }
+  section#main .leaderboard.smaller {
+    width: 80%; }
+  section#main .leaderboard table {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em; }
+    section#main .leaderboard table th, section#main .leaderboard table td {
+      padding: 2%; }
+    section#main .leaderboard table tr:nth-child(odd) {
+      background: #F5F5F5; }
+      section#main .leaderboard table tr:nth-child(odd).header {
+        background: #6699EE;
+        color: #fff; }
+
 /***************
  * Responsive Styling *
  ***************/

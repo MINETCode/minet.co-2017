@@ -1,10 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var User = require("../models/user");
+var Logs = require("../models/logs");
 
 //Render home page
 router.get('/', (req, res, next) => {
   return res.render('./index/index');
+});
+
+
+//Render home page
+router.get('/leaderboard', (req, res, next) => {
+  User.find({username:{$ne: 'minet123'}}).sort('-funds').sort('username').exec(function(err, leaderboard) {
+    return res.render('leaderboard', { leaderboard: leaderboard });
+  });
 });
 
 //Render request page

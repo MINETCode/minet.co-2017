@@ -20,6 +20,7 @@ function createLog(action, category, username) {
   });
 }
 
+
 //Render home page
 router.get('/', (req, res, next) => {
   if(!req.user) {
@@ -212,7 +213,7 @@ router.post('/manage-results', function(req, res) {
     } else if (req.body.eventPosition == 3) {
       fundsToBeAdded = 50000;
     }
-    team.funds += fundsToBeAdded;
+    team.funds += parseInt(fundsToBeAdded);
     team.save();
     createLog('Obtained #' + req.body.eventPosition + ' in ' + req.body.eventName, 'funds', team.username);
     return res.redirect('/dashboard/manage');
@@ -230,13 +231,11 @@ router.post('/manage-manual', function(req, res) {
   });
 });
 
-//ADD STOCKS MANUALLY
 router.post('/manage-dq', function(req, res) {
   User.findOne({schoolName: req.body.teamName3}).remove().exec();
   return res.redirect('/dashboard/manage');
 });
 
-//Render manage page
 router.get('/logs', (req, res, next) => {
   if (req.user.username != 'minet123' || !req.user.username) {
     return res.redirect('/dashboard');

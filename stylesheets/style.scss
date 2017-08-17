@@ -25,5 +25,33 @@
 
 @import "partials/dashboard";
 
+section#main {
+  .leaderboard {
+    width: 100%;
+    max-width: 100%;
+    padding: 3%;
+    text-align: center;
+    margin: 0 auto;
+    &.smaller {
+      width: 80%;
+    }
+    table {
+      width: 100%;
+      text-align: center;
+      font-size: 1.1em;
+      th, td {
+        padding: 2%;
+      }
+      tr:nth-child(odd) {
+        background: $grey;
+        &.header {
+          background: $blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
 //Import mobile styling
 @import "partials/responsive";
