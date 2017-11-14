@@ -49,6 +49,16 @@ section#main {
           color: #fff;
         }
       }
+      &.detailed {
+        tr {
+          background: $grey;
+        }
+        tr.white {
+          display: block;
+          width: 100%;
+          background: #fff;
+        }
+      }
     }
   }
 }

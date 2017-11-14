@@ -935,6 +935,12 @@ section#main .leaderboard {
       section#main .leaderboard table tr:nth-child(odd).header {
         background: #6699EE;
         color: #fff; }
+    section#main .leaderboard table.detailed tr {
+      background: #F5F5F5; }
+    section#main .leaderboard table.detailed tr.white {
+      display: block;
+      width: 100%;
+      background: #fff; }
 
 /***************
  * Responsive Styling *
